@@ -1,0 +1,10 @@
+stubbolo | timothy | male | periwinkle | 1940-02-26
+elkan | ping | female | electric | 1952-01-21
+moch | my | female | pear | 1943-06-08
+sartin | lillian | female | olive | 1967-05-30
+thonney | graig | male | red | 1959-03-12
+orillion | boyce | male | sangria | 1955-11-11
+mallacara | jeffrey | male | plum | 1944-10-02
+trbovich | tracey | male | magenta | 1973-01-02
+vita | diane | female | navy | 2015-11-12
+grandy | major | male | salmon | 1938-09-13

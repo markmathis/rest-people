@@ -1,0 +1,10 @@
+caffie, nathan, male, plum, 1985-02-04
+yearego, alfred, male, crimson, 1993-03-03
+survant, rocco, male, lime, 1995-11-29
+gazitano, benjamin, male, lime, 1971-09-05
+knobloch, lakeisha, female, orange, 1965-08-06
+mbamalu, normand, male, scarlet, 1952-07-07
+kloppenburg, ozell, female, blue-green, 2009-01-15
+kofoed, cassey, female, peach, 1981-11-05
+baldi, vella, female, azure, 1983-02-20
+barish, anne, female, turquoise, 1998-01-31
