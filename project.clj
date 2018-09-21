@@ -4,6 +4,9 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [compojure "1.6.1"]
+                 [cheshire "5.8.0"]
+                 [ring/ring-core "1.6.3"]
+                 [ring/ring-jetty-adapter "1.6.3"]
                  [ring/ring-defaults "0.3.2"]]
   :main ^:skip-aot rest-people.core
   :target-path "target/%s"
