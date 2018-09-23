@@ -7,9 +7,10 @@
   ([records key-fn]
    (display-records records key-fn compare))
   ([records key-fn comparator]
-   (doseq [record (sort-by key-fn comparator records)]
-     (println (record/record->str record)))
-   (println "----")))
+   (when (seq records)
+     (doseq [record (sort-by key-fn comparator records)]
+       (println (record/record->str record)))
+     (println "----"))))
 
 (defn part-1 [records]
   (display-records records (juxt :gender :last-name))
@@ -20,9 +21,12 @@
   (r/start-server records))
 
 (defn -main
-  "I don't do a whole lot ... yet."
+  "Read files passed in as commmand line arguments.
+  Display file data sorted three ways, then start a webserver
+  which serves a REST api to view and manipulate the data."
   [& args]
-  (let [raw-records (record/read-record-files *command-line-args*)
-        records (map record/parse-record raw-records)]
+  (let [records (->> *command-line-args*
+                     record/read-record-files
+                     (map record/parse-record))]
     (part-1 records)
     (part-2 records)))
