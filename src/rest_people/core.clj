@@ -26,7 +26,7 @@
   which serves a REST api to view and manipulate the data."
   [& args]
   (let [records (->> *command-line-args*
-                     record/read-record-files
+                     (apply record/read-record-files)
                      (map record/parse-record))]
     (part-1 records)
     (part-2 records)))
