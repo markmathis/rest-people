@@ -18,7 +18,7 @@
   [x]
   (json/generate-string x))
 
-(def empty-response (->json {}))
+(def empty-response (->json []))
 
 (defn get-handler
   "Creates a handler that responds to a GET request by returning
@@ -52,5 +52,5 @@
 
 (defn start-server
   "Starts webserver that will handle REST requests using records as the backing data."
-  [records]
-  (ring-jetty/run-jetty (record-routes records) {:port 3000 :join? false}))
+  ([records] (start-server 3001 records))
+  ([port records] (ring-jetty/run-jetty (record-routes records) {:port port :join? false})))
