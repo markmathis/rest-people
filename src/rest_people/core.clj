@@ -1,7 +1,20 @@
 (ns rest-people.core
-  (:require [rest-people
+  (:require [clojure.java.io :as io]
+            [rest-people
              [record :as record]
              [rest :as r]]))
+
+(defn read-file-into
+  "Open file with clojure.java.io/reader and read by line into target collection"
+  [target file]
+  (with-open [reader (io/reader file)]
+    (into target (line-seq reader))))
+
+(defn read-record-files
+  "Reads lines of all files into a vector"
+  [& files]
+  (reduce read-file-into [] files))
+
 
 (defn display-records
   ([records key-fn]
@@ -26,7 +39,7 @@
   which serves a REST api to view and manipulate the data."
   [& args]
   (let [records (->> *command-line-args*
-                     (apply record/read-record-files)
+                     (apply read-record-files)
                      (map record/parse-record))]
     (part-1 records)
     (part-2 records)))

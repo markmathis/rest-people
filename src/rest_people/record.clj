@@ -1,19 +1,7 @@
 (ns rest-people.record
-  (:require [clojure.string :as str]
-            [clojure.java.io :as io])
+  (:require [clojure.string :as str])
   (:import (java.time LocalDate)
            (java.time.format DateTimeFormatter)))
-
-(defn read-file-into
-  "Open file with clojure.java.io/reader and read by line into target collection"
-  [target file]
-  (with-open [reader (io/reader file)]
-    (into target (line-seq reader))))
-
-(defn read-record-files
-  "Reads lines of all files into a vector"
-  [& files]
-  (reduce read-file-into [] files))
 
 (defn split-record
   "Takes a string with fields delimited by either a space, comma, or pipe
