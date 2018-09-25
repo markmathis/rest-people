@@ -17,6 +17,7 @@
 
 
 (defn display-records
+  "Displays the given records in the order defined by key-fn."
   ([records key-fn]
    (display-records records key-fn compare))
   ([records key-fn comparator]
@@ -25,12 +26,16 @@
        (println (record/record->str record)))
      (println "----"))))
 
-(defn part-1 [records]
+(defn part-1
+  "Display records sorted three different ways."
+  [records]
   (display-records records (juxt :gender :last-name))
   (display-records records :date-of-birth)
   (display-records records :last-name (comp - compare)))
 
-(defn part-2 [records]
+(defn part-2
+  "Start webserver to serve REST api endpoints prepopulated with data from records."
+  [records]
   (r/start-server records))
 
 (defn -main
